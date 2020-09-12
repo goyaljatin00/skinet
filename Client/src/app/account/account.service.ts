@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {IUser} from '../shared/models/user';
+import {IAddress} from '../shared/models/address';
 import { BehaviorSubject, ReplaySubject, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {Router} from '@angular/router';
@@ -82,6 +83,16 @@ export class AccountService {
   CheckEmailExists(email: string)
   {
     return this.http.get(this.baseUrl + 'account/emailexists?email=' + email);
+  }
+
+  // tslint:disable-next-line: typedef
+  getUserAddress() {
+    return this.http.get<IAddress>(this.baseUrl + 'account/address');
+  }
+
+  // tslint:disable-next-line: typedef
+  updateUserAddress(address: IAddress) {
+    return this.http.put<IAddress>(this.baseUrl + 'account/address', address);
   }
 
 
