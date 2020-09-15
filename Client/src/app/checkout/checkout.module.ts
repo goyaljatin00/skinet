@@ -11,6 +11,7 @@ import { CheckoutSuccessComponent } from './checkout-success/checkout-success.co
 
 
 @NgModule({
+  // tslint:disable-next-line: max-line-length
   declarations: [CheckoutComponent, CheckoutAddressComponent, CheckoutDeliveryComponent, CheckoutReviewComponent, CheckoutPaymentComponent, CheckoutSuccessComponent],
   imports: [
     CommonModule,
